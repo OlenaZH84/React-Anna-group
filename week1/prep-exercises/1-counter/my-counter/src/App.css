@@ -1,0 +1,56 @@
+.App {
+  text-align: center;
+  
+}
+
+.App-header {
+  background-color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: top;
+  font-size: calc(10px + 2vmin);
+  color: black;
+}
+.buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+}
+
+button {
+  display: block;
+  margin-top: 5px;
+  text-decoration: black;
+  text-align: center;
+  color: gray;
+  width: 100px;
+  height: 30px;
+ 
+ } 
+.counter{
+  font-size: 24px;
+  text-align: center;
+  position: relative;
+  margin-top: -5px;
+  color:red;
+}
+.pLocation {
+  /* position: relative; */
+  margin-top: 10px;
+  text-align: top;
+  justify-content: center;
+}
+ /*.Button {
+  text-decoration: black;
+  color: gray;
+  width: 20px;
+  height: 20px;
+}
+.Counter {
+  font-size: 24px;
+  color: black;
+} */
