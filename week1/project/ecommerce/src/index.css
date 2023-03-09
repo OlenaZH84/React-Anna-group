@@ -1,0 +1,109 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* min-width: 1000px; */
+  display: block;
+}
+.App {
+  margin: 8px;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.products--item {
+  width: calc(33% - 16px);
+  margin: 8px;
+  
+}
+li {
+  display: list-item;
+  text-align: -webkit-match-parent;
+}
+h1 {
+  font-size: 2em;
+  margin: .67em 0;
+  display: block;
+  font-size: 2em;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+ }
+.categories {
+  display: flex;
+}
+.categories--item {
+  background-color: #efeff0;
+  cursor: pointer;
+  font-weight: 700;
+  margin: 2px;
+  padding: 12px;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  
+  font-family: HelveticaNow,Helvetica,sans-serif;
+}
+html {
+  -webkit-text-size-adjust: 100%;
+  line-height: 1.15;
+}
+.categories--item-selected {
+  background-color: #bdbdc1;
+}
+.categories--item:hover {
+  background-color: #d6d6d8;
+}
+.product--image {
+  margin-bottom: auto;
+  margin-top: auto;
+  max-height: 300px;
+  object-fit: contain;
+  width: 100%;
+}
+img {
+  border-style: none;
+}
+img {
+  overflow-clip-margin: content-box;
+  overflow: clip;
+}
+.product--title {
+  overflow: hidden;
+  padding-top: 8px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.products {
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+  -webkit-padding-start: 0;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin-block-end: 0;
+  margin-block-start: 0;
+  padding-inline-start: 0;
+}
+.product {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+ul {
+  display: block;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+}
