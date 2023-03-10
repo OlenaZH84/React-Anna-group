@@ -6,7 +6,7 @@ export default function Categories({onClickCategory, activeCategory}) {
  const setCategoryName = (name) => name.slice(6);
   function setSelected(items, activeCategory){
       console.log(items);
-       if (activeCategory === 'all' || items!=activeCategory){
+       if (activeCategory === 'all' || items!==activeCategory){
                return 'categories--item';
       } else { 
               return 'categories--item categories--item-selected'; 

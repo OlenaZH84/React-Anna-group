@@ -9,14 +9,14 @@ export default function Products(props) {
         })
     }
      
- return (
+  return (
     <>
     {
        prodList.map((obj, index)=>{
         return (
         <li  key={index} className='products--item'>
         <div className='product'>
-            <img className='product--image' src={obj.image}/>
+            <img className='product--image' src={obj.image} alt={obj.title}/>
             <span className='product--title'>{obj.title}</span>
         </div>
     </li>
