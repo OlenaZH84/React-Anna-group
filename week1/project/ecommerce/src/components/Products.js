@@ -8,25 +8,25 @@ export default function Products(props) {
         return item.category===props.activeCategory;
         })
     }
-    const getDiscription = (name)=>{
-      if (name.includes('FAKE:')) {
-         return  name.slice(6);
-      } else {
-        return name;
-      }
+    // const getDiscription = (name)=>{
+    //   if (name.includes('FAKE:')) {
+    //      return  name.slice(6);
+    //   } else {
+    //     return name;
+    //   }
 
-    }
+    // }
      
   return (
     <>
     {
        prodList.map((obj, index)=>{
-        const discriptionName=getDiscription(items);
+        // const discriptionName=getDiscription(items);
         return (
         <li  key={index} className='products--item'>
         <div className='product'>
             <img className='product--image' src={obj.image} alt={obj.title}/>
-            <span className='product--title'>{discriptionName}</span>
+            <span className='product--title'>{obj.title}</span>
         </div>
     </li>
         )
