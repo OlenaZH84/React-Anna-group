@@ -19,7 +19,7 @@ export default function Categories({onClickCategory, activeCategory}) {
       {categories.map((items, index)=> {
       const categoryName=setCategoryName(items);
       const selectedNotSelected=setSelected(categoryName, activeCategory);
-       return  <div className={selectedNotSelected}   key={`${categoryName}_${index}`} onClick ={()=>onClickCategory(categoryName)} >{items}</div>
+       return  <div className={selectedNotSelected}   key={`${categoryName}_${index}`} onClick ={()=>onClickCategory(categoryName)} >{categoryName}</div>
        
     })}
     </div>
