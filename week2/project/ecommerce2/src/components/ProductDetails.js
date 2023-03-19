@@ -4,7 +4,7 @@ import ErrorMsg from './Error';
 
 export default function ProductDetails() {
   const { id } = useParams();
-  const [product, setProduct] = useState([]);
+  const [product, setProduct] = useState(0);
   const [loading, setLoading] = useState(false);
   const [errorObj, setErrorObj] = useState({ isError: false, msg: '' });
   const getProduct = async () => {
@@ -25,17 +25,6 @@ export default function ProductDetails() {
   useEffect(() => {
     getProduct(id);
   }, []);
-  // useEffect(() => {
-  //   const getProduct = async () => {
-  //     setLoading(true);
-  //     const response = await fetch(`https://fakestoreapi.com/products/${id}`);
-  //     const data = await response.json();
-  //     setProduct(data);
-
-  //     setLoading(false);
-  //   };
-  //   getProduct();
-  // }, [id]);
 
   if (loading) {
     return <h3>Loading...</h3>;

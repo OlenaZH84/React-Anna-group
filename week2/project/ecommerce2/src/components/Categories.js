@@ -9,11 +9,10 @@ export default function Categories({ onClickCategory, activeCategory }) {
       .then((response) => response.json())
 
       .then((data) => {
-        // console.log('data', data);
         setActiveCat(data);
       });
   }, []);
-  //   console.log('activeCat', activeCat);
+
   function setSelected(items, activeCategory) {
     if (activeCategory === 'all' || items !== activeCategory) {
       return 'categories--item';
