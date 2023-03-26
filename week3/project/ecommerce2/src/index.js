@@ -6,15 +6,30 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ProductDetails from './components/ProductDetails';
 import NotFoundPage from './pages/NotFoundPage';
 import Favourites from './pages/Favourites';
+import { FavouriteListContextProvider } from './context/FavouriteList';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Router>
     <Routes>
       <Route path="/" element={<App />} />
-      <Route path="/product/:id" element={<ProductDetails />} />
+      <Route
+        path="/product/:id"
+        element={
+          <FavouriteListContextProvider>
+            <ProductDetails />
+          </FavouriteListContextProvider>
+        }
+      />
       <Route path="*" element={<NotFoundPage />} />
-      <Route path="/favourites" element={<Favourites />} />
+      <Route
+        path="/products/favourites"
+        element={
+          <FavouriteListContextProvider>
+            <Favourites />
+          </FavouriteListContextProvider>
+        }
+      />
     </Routes>
   </Router>,
 );
