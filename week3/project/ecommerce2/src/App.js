@@ -3,7 +3,6 @@ import Categories from './components/Categories';
 import Products from './components/Products';
 import Nav from './components/Nav';
 import { StoreContextProvider } from './context/CategoriesContext';
-import { FavouriteListContextProvider } from './context/FavouriteList';
 
 function App() {
   return (
@@ -12,16 +11,10 @@ function App() {
         <h1 className="title-container--title">Products</h1>
         <Nav />
       </div>
-      {/* <StoreContext.Provider
-        value={{ activeCategory, setActiveCategory, categories, setCategories }}>
-        <Categories />
-        <Products />
-      </StoreContext.Provider> */}
+
       <StoreContextProvider>
         <Categories />
-        <FavouriteListContextProvider>
-          <Products />
-        </FavouriteListContextProvider>
+        <Products />
       </StoreContextProvider>
     </div>
   );

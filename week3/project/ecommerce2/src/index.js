@@ -12,7 +12,14 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Router>
     <Routes>
-      <Route path="/" element={<App />} />
+      <Route
+        path="/"
+        element={
+          <FavouriteListContextProvider>
+            <App />
+          </FavouriteListContextProvider>
+        }
+      />
       <Route
         path="/product/:id"
         element={

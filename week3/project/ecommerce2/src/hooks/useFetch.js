@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export const useFetch = () => {
   const [error, setError] = useState(null);
@@ -22,6 +22,7 @@ export const useFetch = () => {
       setIsLoading(false);
     }
   }
+
   async function cusSmallFetch(url) {
     const response = await fetch(url);
 

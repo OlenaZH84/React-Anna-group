@@ -40,6 +40,8 @@ h1 {
  }
 .categories {
   display: flex;
+ 
+  flex-wrap: wrap;
   
 }
 .categories--item {
@@ -49,7 +51,8 @@ h1 {
   font-weight: 700;
   margin: 2px;
   padding: 12px;
- 
+  display: flex;
+  flex-wrap: wrap;
 }
 body {
   -webkit-font-smoothing: antialiased;
@@ -62,6 +65,8 @@ html {
 }
 .categories--item-selected {
   background-color: #bdbdc1;
+  display: flex;
+  flex-wrap: wrap;
 }
 .categories--item:hover {
   background-color: #d6d6d8;
@@ -136,7 +141,7 @@ a {
 
 
 .product-details--information {
-  align-items: end;
+  
   display: flex;
   flex-direction: column;
 }
@@ -194,7 +199,7 @@ font-size: 26px;
   font-weight: 400;
 }
 .product-image--favourite-container {
-  background-color: none;
+  background-color: white;
   cursor: pointer;
   height: 20px;
   padding: 8px;

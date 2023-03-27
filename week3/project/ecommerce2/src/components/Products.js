@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useEffect, useContext } from 'react';
 import { useFetch } from '../hooks/useFetch';
 import Product from './Product';
 import ErrorMsg from '../pages/Error';
@@ -9,7 +9,6 @@ export default function Products() {
   const { activeCategory } = useContext(StoreContext);
   const { favouriteList, setFavouriteList } = useContext(FavouriteListContext);
 
-  // const [cardItems, setCardItems] = useState([]);
   const { data, error, isLoading, cusBigFetch, cusSmallFetch } = useFetch();
   const getProductList = React.useCallback(async () => {
     const url =
@@ -21,7 +20,7 @@ export default function Products() {
   useEffect(() => {
     getProductList();
   }, [activeCategory, getProductList]);
-  const onAddToFav = (obj, id) => {
+  const onAddToFav = (id) => {
     const isFavouriteList = favouriteList.includes(id);
 
     if (!isFavouriteList) {
@@ -30,7 +29,6 @@ export default function Products() {
       setFavouriteList((prev) => prev.filter((item) => item !== id));
     }
   };
-  console.log('products=', favouriteList);
 
   return (
     <>

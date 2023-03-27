@@ -3,19 +3,23 @@ import { FavouriteListContext } from '../context/FavouriteList';
 import imgHeart from '../assets/heart-regular.svg';
 import imgHeartBlack from '../assets/heart-solid.svg';
 
-export const useHeart = () => {
-  const [heartChecked, setheartChecked] = useState(imgHeart);
-  const { favouriteList, setFavouriteList } = useContext(FavouriteListContext);
+export const useHeart = (itemId) => {
+  const ItemIdInNumber = Number(itemId);
 
-  const onAddToFav = (id) => {
-    const isFavouriteList = favouriteList.includes(id);
+  const { favouriteList, setFavouriteList } = useContext(FavouriteListContext);
+  const isFavouriteList = favouriteList.includes(ItemIdInNumber);
+  const [heartChecked, setheartChecked] = useState(() =>
+    isFavouriteList ? imgHeartBlack : imgHeart,
+  );
+
+  const onAddToFav = () => {
     if (!isFavouriteList) {
-      setFavouriteList((prev) => [...prev, id]);
+      setFavouriteList((prev) => [...prev, ItemIdInNumber]);
       setheartChecked(imgHeartBlack);
     } else {
-      setFavouriteList((prev) => prev.filter((item) => item !== id));
+      setFavouriteList((prev) => prev.filter((item) => item !== ItemIdInNumber));
       setheartChecked(imgHeart);
     }
   };
-  return { heartChecked, favouriteList, onAddToFav };
+  return { heartChecked, onAddToFav };
 };

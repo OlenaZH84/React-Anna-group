@@ -1,14 +1,12 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import ErrorMsg from '../pages/Error';
 import Nav from './Nav';
 import { useFetch } from '../hooks/useFetch';
-import { FavouriteListContext } from '../context/FavouriteList';
+
 import { useHeart } from '../hooks/useHeart';
 
 export default function ProductDetails() {
-  const { favouriteList, setFavouriteList } = useContext(FavouriteListContext);
-  console.log(favouriteList, 'favouriteListPD');
   const { id } = useParams();
 
   const { data, error, isLoading, cusBigFetch } = useFetch();
@@ -19,18 +17,9 @@ export default function ProductDetails() {
     getProduct(id);
   }, []);
   const { heartChecked, onAddToFav } = useHeart(id);
-  console.log('productDET', favouriteList);
-  console.log(heartChecked, 'heart');
-  // heartChecked, onAddToFav
 
-  // const onClickFav = () => {
-  //   onClickHeart({ favouriteList });
-
-  //   console.log('product', favouriteList);
-  //   setheartChecked(!heartChecked);
-  // };
   const onClickFav = () => {
-    onAddToFav(id);
+    onAddToFav();
   };
 
   return (
