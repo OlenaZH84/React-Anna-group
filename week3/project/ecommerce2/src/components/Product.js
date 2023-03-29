@@ -2,13 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useHeart } from '../hooks/useHeart';
 
-export default function Product({ name, src, alt, id, onClickHeart }) {
+export default function Product({ name, src, alt, id }) {
   // const { favouriteList, setFavouriteList } = useContext(FavouriteListContext);
-
-  const { heartChecked, onAddToFav } = useHeart(id);
+  console.log('id prod', id);
+  const { heartChecked, onAddToFavor } = useHeart(id);
+  // console.log(' heartChecked', heartChecked);
 
   const onClickFav = () => {
-    onAddToFav();
+    onAddToFavor();
   };
   return (
     <div className="product">

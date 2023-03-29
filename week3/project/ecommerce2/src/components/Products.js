@@ -4,11 +4,13 @@ import Product from './Product';
 import ErrorMsg from '../pages/Error';
 import { StoreContext } from '../context/CategoriesContext';
 import { FavouriteListContext } from '../context/FavouriteList';
+import { useHeart } from '../hooks/useHeart';
 
 export default function Products() {
   const { activeCategory } = useContext(StoreContext);
   const { favouriteList, setFavouriteList } = useContext(FavouriteListContext);
-
+  console.log(favouriteList);
+  const { onAddToFavor } = useHeart();
   const { data, error, isLoading, cusBigFetch, cusSmallFetch } = useFetch();
   const getProductList = React.useCallback(async () => {
     const url =
@@ -20,15 +22,6 @@ export default function Products() {
   useEffect(() => {
     getProductList();
   }, [activeCategory, getProductList]);
-  const onAddToFav = (id) => {
-    const isFavouriteList = favouriteList.includes(id);
-
-    if (!isFavouriteList) {
-      setFavouriteList((prev) => [...prev, id]);
-    } else {
-      setFavouriteList((prev) => prev.filter((item) => item !== id));
-    }
-  };
 
   return (
     <>
@@ -46,7 +39,7 @@ export default function Products() {
                   alt={item.title}
                   key={index}
                   id={item.id}
-                  onClickHeart={(obj, id) => onAddToFav(obj, item.id)}
+                  onClick={onAddToFavor}
                 />
               </li>
             );

@@ -16,10 +16,10 @@ export default function ProductDetails() {
   useEffect(() => {
     getProduct(id);
   }, []);
-  const { heartChecked, onAddToFav } = useHeart(id);
+  const { heartChecked, onAddToFavor } = useHeart(id);
 
   const onClickFav = () => {
-    onAddToFav();
+    onAddToFavor();
   };
 
   return (

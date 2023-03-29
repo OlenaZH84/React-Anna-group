@@ -7,8 +7,8 @@ import Product from '../components/Product';
 
 export default function Favourites() {
   const { favouriteList } = useContext(FavouriteListContext);
-
-  const { onAddToFav } = useHeart();
+  console.log(favouriteList, 'f');
+  const { onAddToFavor } = useHeart();
 
   const [favouriteProduct, setFavouriteProduct] = useState([]);
   const [errorObj, setErrorObj] = useState({ isError: null, msg: '' });
@@ -49,7 +49,7 @@ export default function Favourites() {
                       alt={item.title}
                       key={index}
                       id={item.id}
-                      onClickHeart={(obj) => onAddToFav(obj, item.id)}
+                      onClickHeart={onAddToFavor}
                     />
                   </li>
                 );
@@ -60,18 +60,3 @@ export default function Favourites() {
     </>
   );
 }
-
-/* <ul className="products">
-{favouriteProduct.map((item) => {
-  const { id, title, images } = item;
-  console.log(item, 'item');
-  return (
-    <li className="products--item" key={id}>
-      
-      <img className="product--image" src={images[0]} alt={title} />
-      <span className="product--title">{title}</span>
-      <img onClick={onClickFav} src={heartChecked} alt="heart" />
-    </li>
-  );
-})}
-</ul> */
